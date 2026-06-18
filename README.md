@@ -1,16 +1,72 @@
-# React + Vite
+RemoteRecruit – Interview Dashboard
+A modern, highly responsive remote recruitment landing page and dashboard application built using React 19, Vite, and Tailwind CSS.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tech Stack
+Framework: React 19
 
-Currently, two official plugins are available:
+Build Tool: Vite 8
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Styling: Tailwind CSS v3 & Autoprefixer
 
-## React Compiler
+Icons: Lucide React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Getting Started:
+Follow these steps to set up and run the project locally.
+
+1. Clone the repository & Install Dependencies
+Bash
+npm install
+2. Install PostCSS Dependencies (Required for Tailwind v3)
+Bash
+npm install -D autoprefixer postcss
+3. Run the Development Server
+Bash
+npm run dev
+Open http://localhost:5173 in your browser to view the application.
+
+4. Build for Production
+Bash
+npm run build
+
+
+Configuration Files:
+
+postcss.config.js
+JavaScript
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+tailwind.config.js
+JavaScript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+
+Project Structure
+Plaintext
+├── src/
+│   ├── components/      # Self-contained layout modules
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   └── ...
+│   ├── App.jsx          # Main application layout entry point
+│   ├── index.css        # Tailwind directives and base global styles
+│   └── main.jsx         # React application DOM mounting script
+├── postcss.config.js    # PostCSS preprocessor configuration
+├── tailwind.config.js   # Tailwind custom theme configuration settings
+└── package.json         # Project manifests and build dependencies
